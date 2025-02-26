@@ -4,7 +4,8 @@ import threading
 import win32api, win32con
 
 h = None
-healKeys, honKeys, healDelay, honDelay = '', '', '', ''
+healKey, honKey, revKey = '', '', ''
+healDelay, honDelay = '', ''
 keys = (win32con.VK_NUMPAD0, win32con.VK_NUMPAD1, win32con.VK_NUMPAD2, win32con.VK_NUMPAD3, win32con.VK_NUMPAD4, 
         win32con.VK_NUMPAD5, win32con.VK_NUMPAD6, win32con.VK_NUMPAD7, win32con.VK_NUMPAD8, win32con.VK_NUMPAD9)
 
@@ -42,20 +43,33 @@ def exec():
     pushKey(win32con.VK_ESCAPE)
     for i in range(1,4):
         hon()
-    time.sleep(0.002)
+    time.sleep(0.01)
     pushKey(win32con.VK_TAB)
-    time.sleep(0.002)
+    time.sleep(0.01)
     pushKey(win32con.VK_TAB)
 
 def pushKey(key):
     win32api.keybd_event(key, 0, 0, 0)
 
 def heal():
-    win32api.keybd_event(keys[healKeys], 0, 0, 0)
+    win32api.keybd_event(keys[healKey], 0, 0, 0)
 
 def hon():
-    win32api.keybd_event(keys[honKeys], 0, 0, 0)
+    win32api.keybd_event(keys[honKey], 0, 0, 0)
     time.sleep(honDelay / 1000)
     win32api.keybd_event(win32con.VK_UP, 0, 0, 0)
     time.sleep(honDelay / 1000)
     win32api.keybd_event(win32con.VK_RETURN, 0, 0, 0)
+
+def revive():
+    win32api.keybd_event(win32con.VK_ESCAPE, 0, 0, 0)
+    time.sleep(0.01)
+    win32api.keybd_event(keys[revKey], 0, 0, 0)
+    time.sleep(0.01)
+    win32api.keybd_event(win32con.VK_HOME, 0, 0, 0)
+    time.sleep(0.01)
+    win32api.keybd_event(win32con.VK_RETURN, 0, 0, 0)
+    time.sleep(0.01)
+    pushKey(win32con.VK_TAB)
+    time.sleep(0.01)
+    pushKey(win32con.VK_TAB)

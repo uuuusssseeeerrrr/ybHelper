@@ -13,6 +13,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if (
             self.hEdit.toPlainText() == ""
             or self.h2Edit.toPlainText() == ""
+            or self.h3Edit.toPlainText() == ""
             or self.hEdit_d.toPlainText() == ""
             or self.hEdit_d2.toPlainText() == ""
         ):
@@ -24,14 +25,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 QMessageBox.Ok,
             )
         else:
+            # 키입력
+            keyEvent.healKey = int(self.hEdit.toPlainText())
+            keyEvent.honKey = int(self.h2Edit.toPlainText())
+            keyEvent.revKey = int(self.h3Edit.toPlainText())
 
-            keyEvent.healKeys = int(self.hEdit.toPlainText())
-            keyEvent.honKeys = int(self.h2Edit.toPlainText())
+            # 딜레이
             keyEvent.healDelay = int(self.hEdit_d.toPlainText())
             keyEvent.honDelay = int(self.hEdit_d2.toPlainText())
 
             self.hEdit.setEnabled(False)
             self.h2Edit.setEnabled(False)
+            self.h3Edit.setEnabled(False)
             self.hEdit_d.setEnabled(False)
             self.hEdit_d2.setEnabled(False)
 
@@ -41,6 +46,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def logicEnd(self):
         self.hEdit.setEnabled(True)
         self.h2Edit.setEnabled(True)
+        self.h3Edit.setEnabled(True)
         self.hEdit_d.setEnabled(True)
         self.hEdit_d2.setEnabled(True)
         self.labelStat.setText("시작대기중입니다")

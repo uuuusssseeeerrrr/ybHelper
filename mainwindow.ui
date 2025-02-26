@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>279</width>
-    <height>253</height>
+    <width>275</width>
+    <height>234</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>버튼1</string>
+     <string>힐</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="hEdit">
@@ -37,33 +37,33 @@
      </rect>
     </property>
     <property name="placeholderText">
-     <string>숫자만입력</string>
+     <string>숫자한글자만</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="h2Edit">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>50</y>
+      <y>40</y>
       <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="placeholderText">
-     <string>숫자만입력</string>
+     <string>숫자한글자만</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
+      <y>50</y>
       <width>31</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>버튼2</string>
+     <string>혼</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -96,7 +96,7 @@
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>60</y>
+      <y>50</y>
       <width>41</width>
       <height>16</height>
      </rect>
@@ -109,7 +109,7 @@
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>50</y>
+      <y>40</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -122,7 +122,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>120</y>
+      <y>110</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -135,7 +135,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>120</y>
+      <y>110</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -148,7 +148,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>170</y>
+      <y>160</y>
       <width>221</width>
       <height>16</height>
      </rect>
@@ -157,13 +157,39 @@
      <string>시작대기중입니다</string>
     </property>
    </widget>
+   <widget class="QTextEdit" name="h3Edit">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>70</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>숫자한글자만</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>부활</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>279</width>
+     <width>275</width>
      <height>33</height>
     </rect>
    </property>
