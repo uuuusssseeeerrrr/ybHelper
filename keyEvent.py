@@ -37,12 +37,19 @@ def eventListener(e):
             h = None
 
 def exec():
+    # heal
     for i in range(1,3):
-        heal()
+        pushKey(keys[healKey])
         time.sleep(healDelay / 1000)
+
+    #esc
     pushKey(win32con.VK_ESCAPE)
+
+    #hon
     for i in range(1,4):
         hon()
+    
+    # double tab
     time.sleep(0.01)
     pushKey(win32con.VK_TAB)
     time.sleep(0.01)
@@ -50,25 +57,24 @@ def exec():
 
 def pushKey(key):
     win32api.keybd_event(key, 0, 0, 0)
-
-def heal():
-    win32api.keybd_event(keys[healKey], 0, 0, 0)
+    time.sleep(0.001)
+    win32api.keybd_event(key, 0, win32con.KEYEVENTF_KEYUP, 0)
 
 def hon():
-    win32api.keybd_event(keys[honKey], 0, 0, 0)
+    pushKey(keys[honKey])
     time.sleep(honDelay / 1000)
-    win32api.keybd_event(win32con.VK_UP, 0, 0, 0)
+    pushKey(win32con.VK_UP)
     time.sleep(honDelay / 1000)
-    win32api.keybd_event(win32con.VK_RETURN, 0, 0, 0)
+    pushKey(win32con.VK_RETURN)
 
 def revive():
-    win32api.keybd_event(win32con.VK_ESCAPE, 0, 0, 0)
+    pushKey(win32con.VK_ESCAPE)
     time.sleep(0.01)
-    win32api.keybd_event(keys[revKey], 0, 0, 0)
+    pushKey(keys[revKey])
     time.sleep(0.01)
-    win32api.keybd_event(win32con.VK_HOME, 0, 0, 0)
+    pushKey(win32con.VK_HOME)
     time.sleep(0.01)
-    win32api.keybd_event(win32con.VK_RETURN, 0, 0, 0)
+    pushKey(win32con.VK_RETURN)
     time.sleep(0.01)
     pushKey(win32con.VK_TAB)
     time.sleep(0.01)
